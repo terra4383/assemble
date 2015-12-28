@@ -73,7 +73,12 @@ module.exports = function(grunt) {
           layoutdir: '<%= config.src %>/templates/layouts/',
           data: '<%= config.src %>/data/*.{json,yml}',
           partials: '<%= config.src %>/templates/partials/**/*.hbs',
-          plugins: ['assemble-contrib-permalinks','assemble-contrib-sitemap','assemble-contrib-toc']
+          plugins: ['assemble-contrib-permalinks','assemble-contrib-sitemap','assemble-contrib-toc'],
+          collections: [{
+            name: 'post',
+            sortby: 'posted',
+            sortorder: 'descending'
+          }],
         },
 
         posts: {
